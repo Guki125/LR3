@@ -1,0 +1,10 @@
+body{
+    background-color: rgba(166, 246, 207, 0.66);
+}
+
+button, select{
+    min-height: 25px;
+    min-width: 60px;
+    border-radius: 5px;
+    background: #d18253;
+}

@@ -1,22 +1,44 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html lang="uk">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Розрахунок площі круга</title>
+    <link rel="stylesheet" href="forma.css">
 </head>
 <body>
-<form action="/submit" method="post">
-    <label>Оберіть спосіб </label>
-    <select name="plo" id="foundPloshu">
-        <option value="1">За радіусом (r)</option>
-        <option value="2">За діаметром (d)</option>
-        <option value="3">За довжиною кола (C)</option>
-        <option value="4">За сектором (кут і радіус)</option>
-        <option value="5">Через координати трьох точок</option>
-    </select>
-</form>
+<a href="index.html"><button id="btnBack">< Назад</button></a>
+<div class="container">
+    <h1>Розрахунок площі круга</h1>
+
+    <!-- Вибір способу обчислення -->
+    <div class="method-container">
+        <label for="methodSelect">Оберіть метод:</label>
+        <select id="methodSelect" onchange="showMethodFields()">
+            <option value="">-- Виберіть --</option>
+            <option value="radius">За радіусом (r)</option>
+            <option value="diameter">За діаметром (d)</option>
+            <option value="circumference">За довжиною кола (C)</option>
+            <option value="sector">За сектором (кут і радіус)</option>
+            <option value="coordinates">Через координати трьох точок</option>
+        </select>
+    </div>
+
+    <!-- Поля для введення значень -->
+    <div class="form-container" id="methodFields">
+        <p>Оберіть метод для обчислення площі</p>
+    </div>
+
+    <div class="result-container">
+        <p id="result">Площа круга: 0 квадратних одиниць</p>
+    </div>
+
+    <!-- Канвас для візуалізації круга -->
+    <div class="circle-container">
+        <canvas id="circleCanvas" width="300" height="300"></canvas>
+    </div>
+</div>
+
+<script src="forma.js"></script>
 </body>
 </html>

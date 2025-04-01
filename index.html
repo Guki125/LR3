@@ -1,31 +1,35 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="uk">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="lr3.css">
-    <title>lr3</title>
+    <title>ЛР 3</title>
 </head>
 <body>
-<div id="firstZavd" class="firstZavd">
-    <a href="forma.html"><button id="nextPage">Слідуюча сторінка</button></a>
-    <br>
-</div>
-<div>
-    <button id="baton" onclick="btnMove()">Натисни на мене XD!</button>
-    <br>
-    <div id="custom-menu">
+
+<!-- Основний контейнер -->
+<div class="container">
+    <h1>Лабораторна робота 3</h1>
+
+    <!-- Блок кнопок -->
+    <div class="buttons">
+        <a href="forma.html"><button id="nextPage">Слідуюча сторінка</button></a>
+        <button id="baton" onclick="btnMove()">Натисни на мене XD!</button>
     </div>
-    <label for="input">Введіть текст у великому регістрі!🤥🙄
-        <input  id="input"
-                type="text"
-                placeholder="AaAaaAAaa"
-                onselect="handleSelect()"
-                oncontextmenu="showOriginal()"
-                onchange="lowCase()">
-    </label>
+
+    <p>Кількість натискань: <span id="clickCount">0</span></p>
+
+    <!-- Поле вводу -->
+    <div class="input-container">
+        <label for="input">Введіть текст у великому регістрі!🤥🙄</label>
+        <input id="input" type="text" placeholder="AaAaaAAaa"
+               onselect="handleSelect()"
+               oncontextmenu="showOriginal()"
+               onchange="lowCase()">
+    </div>
 </div>
-<!-- Підключення скрипту перед закриваючим тегом body -->
+
 <script src="lr3.js"></script>
 </body>
 </html>

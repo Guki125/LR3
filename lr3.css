@@ -1,17 +1,78 @@
-body{
-    background-color: rgba(166, 246, 207, 0.66);
+/* Загальні стилі */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f1f9f9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
 }
 
-button, select{
-    min-height: 25px;
-    min-width: 60px;
+/* Основний контейнер */
+.container {
+    background-color: #d3d3d3; /* Світло-сірий фон */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    max-width: 400px;
+    width: 100%;
+}
+
+/* Заголовок */
+h1 {
+    margin-bottom: 20px;
+}
+
+/* Блок для кнопок */
+.buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 10px; /* Відступ між кнопками */
+    align-items: center;
+}
+
+/* Стилі для кнопок */
+button {
+    background-color: #777;
+    color: white;
+    border: none;
     border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    padding: 10px 20px;
+    transition: background 0.3s ease;
+    width: auto; /* НЕ розтягуємо на всю ширину */
+    min-width: 180px; /* Мінімальна ширина кнопки */
 }
 
-#custom-menu{
-    display:none;
-    position:absolute;
-    background:#ddd;
-    border:1px solid #ccc;
-    padding:10px;
+button:hover {
+    background-color: #555;
+}
+
+/* Поле вводу */
+.input-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 10px;
+}
+
+input {
+    padding: 10px;
+    width: 90%; /* Робимо адаптивним */
+    font-size: 16px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    text-align: center;
+}
+
+img {
+    position: absolute;
+    min-height: 900px;
+    min-width: 900px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
 }

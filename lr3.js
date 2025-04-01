@@ -2,10 +2,6 @@ const originalText = {
     origTxt: ""
 }; // Глобальна змінна для початкового тексту
 
-let clickData = {
-    clickCount: 0, // Лічильник кліків
-};
-
 function lowCase() {
     let inputValue = document.getElementById("input").value;
     document.getElementById("input").value = inputValue.toLowerCase();
@@ -44,9 +40,13 @@ document.addEventListener("click", () => {
 });
 
 
-function btnMove (){
+let clickData = {
+    clickCount: 0,
+    targetClicks: 10 // Поріг натискань, після якого відбудеться перехід
+};
+
+function btnMove() {
     let btn = document.getElementById("baton");
-    let rand = Math.floor(Math.random() * 10) + 1;
 
     let newX = Math.random() * (window.innerWidth - btn.offsetWidth);
     let newY = Math.random() * (window.innerHeight - btn.offsetHeight);
@@ -54,11 +54,16 @@ function btnMove (){
     btn.style.position = "absolute";
     btn.style.left = newX + "px";
     btn.style.top = newY + "px";
-
-    btn.addEventListener("mouseenter", btnMove);
-
-    btn.addEventListener("click", function () {
-        clickData.clickCount++;
-        clickData.clickCount === rand ? window.location.href="funny.html" : null;
-    })
 }
+
+document.getElementById("baton").addEventListener("click", function () {
+    clickData.clickCount++;
+    document.getElementById("clickCount").textContent = clickData.clickCount;
+
+    console.log(`Клік: ${clickData.clickCount}, Ціль: ${clickData.targetClicks}`);
+
+    // Якщо клікнули targetClicks разів, переходимо на funny.html
+    clickData.clickCount === clickData.targetClicks
+        ? (console.log("✅ Перехід на funny.html!"), window.location.href = "funny.html")
+        : btnMove(); // Інакше рухаємо кнопку
+});

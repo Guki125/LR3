@@ -6,5 +6,12 @@ button, select{
     min-height: 25px;
     min-width: 60px;
     border-radius: 5px;
-    background: #d18253;
+}
+
+#custom-menu{
+    display:none;
+    position:absolute;
+    background:#ddd;
+    border:1px solid #ccc;
+    padding:10px;
 }

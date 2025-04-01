@@ -3,14 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="lr3.js">
     <link rel="stylesheet" href="lr3.css">
-    <script src="lr3.js"></script>
     <title>lr3</title>
 </head>
 <body>
-    <div id="firstZavd" class="firstZavd">
-        <a href=""><button id="nextPage" >Слідуюча сторінкай</button></a>
+<div id="firstZavd" class="firstZavd">
+    <a href="forma.html"><button id="nextPage">Слідуюча сторінка</button></a>
+    <br>
+</div>
+<div>
+    <button id="baton" onclick="btnMove()">Натисни на мене XD!</button>
+    <br>
+    <div id="custom-menu">
     </div>
+    <label for="input">Введіть текст у великому регістрі!🤥🙄
+        <input  id="input"
+                type="text"
+                placeholder="AaAaaAAaa"
+                onselect="handleSelect()"
+                oncontextmenu="showOriginal()"
+                onchange="lowCase()">
+    </label>
+</div>
+<!-- Підключення скрипту перед закриваючим тегом body -->
+<script src="lr3.js"></script>
 </body>
 </html>
